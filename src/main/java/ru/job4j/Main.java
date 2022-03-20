@@ -7,7 +7,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(Math.sqrt(distance(1, 1, 3, 4)));
+        float f = 12358.7f;
+        int i = 45981;
+        short rsl = (short) (f + i);
+        System.out.println(rsl);
 
     }
 }
