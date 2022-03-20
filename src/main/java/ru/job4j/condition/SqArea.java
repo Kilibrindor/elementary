@@ -9,7 +9,7 @@ public class SqArea {
     }
 
     public static void main(String[] args) {
-        double result = SqArea.square(6, 2);
+        double result = SqArea.square(10, 2);
         System.out.println("Площадь равна " + result);
     }
 }
