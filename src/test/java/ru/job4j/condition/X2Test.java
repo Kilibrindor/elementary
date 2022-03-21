@@ -50,4 +50,15 @@ public class X2Test {
         int out = X2.calc(a, b, c, x);
         Assert.assertEquals(expected, out);
     }
+
+    @Test
+    public void whenA1B1C0X0Then0() {
+        int a = 1;
+        int b = 1;
+        int c = 0;
+        int x = 0;
+        int expected = 0;
+        int out = X2.calc(a, b, c, x);
+        Assert.assertEquals(expected, out);
+    }
 }
