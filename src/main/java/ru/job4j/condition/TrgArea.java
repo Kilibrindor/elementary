@@ -8,6 +8,6 @@ public class TrgArea {
     }
 
     public static void main(String[] args) {
-        System.out.println("Площадь треугольника равна " + area(2, 2, 2));
+        System.out.println("Площадь треугольника равна " + area(3, 2, 2));
     }
 }
