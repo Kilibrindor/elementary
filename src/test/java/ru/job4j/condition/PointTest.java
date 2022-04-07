@@ -9,34 +9,28 @@ public class PointTest {
 
     @Test
     public void when00to20then2() {
-        int x1 = 0;
-        int y1 = 0;
-        int x2 = 2;
-        int y2 = 0;
+        Point point = new Point(0, 0);
+        Point point1 = new Point(2, 0);
         double expected = 2;
-        double out = Point.distance(x1, y1, x2, y2);
+        double out = point.distance(point1);
         Assert.assertEquals(expected, out, 0.01);
     }
 
     @Test
     public void when11to34then5() {
-        int x1 = 1;
-        int y1 = 1;
-        int x2 = 3;
-        int y2 = 4;
+        Point point = new Point(1, 1);
+        Point point1 = new Point(3, 4);
         double expected = 3.6;
-        double out = Point.distance(x1, y1, x2, y2);
+        double out = point.distance(point1);
         Assert.assertEquals(expected, out, 0.01);
     }
 
     @Test
     public void when23to57then7() {
-        int x1 = 2;
-        int y1 = 3;
-        int x2 = 5;
-        int y2 = 7;
+        Point point = new Point(2, 3);
+        Point point1 = new Point(5, 7);
         double expected = 5;
-        double out = Point.distance(x1, y1, x2, y2);
+        double out = point.distance(point1);
         Assert.assertEquals(expected, out, 0.01);
     }
 }
