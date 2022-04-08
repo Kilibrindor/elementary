@@ -33,4 +33,13 @@ public class PointTest {
         double out = point.distance(point1);
         Assert.assertEquals(expected, out, 0.01);
     }
+
+    @Test
+    public void when235to579then7() {
+        Point point = new Point(2, 3, 5);
+        Point point1 = new Point(5, 7, 9);
+        double expected = 5.65;
+        double out = point.distance(point1);
+        Assert.assertEquals(expected, out, 0.01);
+    }
 }
