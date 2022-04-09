@@ -35,7 +35,7 @@ public class PointTest {
     }
 
     @Test
-    public void when235to579then7() {
+    public void when235to579then5dot65() {
         Point point = new Point(2, 3, 5);
         Point point1 = new Point(5, 7, 9);
         double expected = 5.65;
