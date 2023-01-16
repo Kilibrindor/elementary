@@ -9,7 +9,6 @@ public class PasswordValidator {
 
     private static void validation(String password) {
         char[] chars = password.toCharArray();
-
         for (char c : chars) {
             if (Character.isUpperCase(c) && Character.isLetter(c)) {
                 isUpperCase = true;
@@ -26,6 +25,16 @@ public class PasswordValidator {
         }
     }
 
+    private static void validateOfWeakPass(String password) {
+        String[] passwords = {"qwerty", "12345", "password", "admin", "user"};
+        for (String s : passwords) {
+            if (password.contains(s)) {
+                throw new IllegalArgumentException(
+                        "Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
+            }
+        }
+    }
+
     public static String validate(String password) {
         if (password == null) {
             throw new IllegalArgumentException("Password can't be null");
@@ -33,14 +42,8 @@ public class PasswordValidator {
         if (password.length() < 8 || password.length() > 32) {
             throw new IllegalArgumentException("Password should be length [8, 32]");
         }
-        if (password.toUpperCase().contains("QWERTY") || password.contains("12345")
-                || password.toLowerCase().contains("password") || password.toLowerCase().contains("admin")
-                || password.toLowerCase().contains("user")) {
-            throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
-        }
-
+        validateOfWeakPass(password);
         validation(password);
-
         if (!isLowerCase) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
         }
@@ -53,7 +56,6 @@ public class PasswordValidator {
         if (!isUpperCase) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
         }
-
         return password;
     }
 }
