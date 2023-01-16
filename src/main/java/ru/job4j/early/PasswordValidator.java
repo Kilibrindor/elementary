@@ -28,7 +28,7 @@ public class PasswordValidator {
     private static void validateOfWeakPass(String password) {
         String[] passwords = {"qwerty", "12345", "password", "admin", "user"};
         for (String s : passwords) {
-            if (password.contains(s)) {
+            if (password.toLowerCase().contains(s)) {
                 throw new IllegalArgumentException(
                         "Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
             }
